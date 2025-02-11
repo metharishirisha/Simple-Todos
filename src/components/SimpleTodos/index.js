@@ -39,15 +39,18 @@ const initialTodosList = [
   },
 ]
 
-// Write your code here
 class SimpleTodos extends Component {
-  state = {todosList: initialTodosList}
+  state = {
+    todosList: initialTodosList,
+  }
 
   deleteTodo = id => {
     const {todosList} = this.state
     const updatedTodosList = todosList.filter(eachTodo => eachTodo.id !== id)
 
-    this.setState({todosList: updatedTodosList})
+    this.setState({
+      todosList: updatedTodosList,
+    })
   }
 
   render() {
@@ -56,7 +59,7 @@ class SimpleTodos extends Component {
     return (
       <div className="app-container">
         <div className="simple-todos-container">
-          <h1 className="head">Simple Todos</h1>
+          <h1 className="heading">Simple Todos</h1>
           <ul className="todos-list">
             {todosList.map(eachTodo => (
               <TodoItem
@@ -71,4 +74,5 @@ class SimpleTodos extends Component {
     )
   }
 }
+
 export default SimpleTodos
